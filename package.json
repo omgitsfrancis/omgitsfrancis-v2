@@ -1,0 +1,27 @@
+{
+  "name": "portfolio-v2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-brands-svg-icons": "^5.12.1",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.7"
+  }
+}
