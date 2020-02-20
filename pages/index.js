@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Window from "../components/window";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Project from "../components/project";
 
 const Body = styled.div`
   padding-top: 5rem;
@@ -10,7 +11,6 @@ const Body = styled.div`
 
 const Section = styled.div`
   padding-top: 5rem;
-  padding-bottom: 5rem;
   margin: 0 5rem;
   @media (max-width: 480px) {
     margin: 0 2rem;
@@ -69,11 +69,12 @@ export default function Index() {
 
           <Section id="code">
             <h1>Section 3</h1>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
+            <Project
+              title="Personal Website v1"
+              description="My very first take at making a website."
+              projectLink="https://omgitsfrancis.github.io/"
+              gitLink="https://github.com/omgitsfrancis/omgitsfrancis.github.io"
+            />
             <p>Home</p>
             <p>Home</p>
             <p>Home</p>

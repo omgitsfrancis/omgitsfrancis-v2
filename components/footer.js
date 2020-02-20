@@ -7,6 +7,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 1rem;
 `;
 
 const SocialMediaContainer = styled.div`
@@ -19,7 +20,7 @@ const SocialMediaContainer = styled.div`
 `;
 
 const SocialMediaIcon = styled(FontAwesomeIcon)`
-  color: white;
+  color: rgb(103, 109, 121);
 
   &:hover {
     opacity: 0.7;

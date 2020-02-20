@@ -11,11 +11,14 @@ const GlobalStyles = createGlobalStyle`
 	}
   body {
 		box-sizing: border-box;
-		color: white;
-		background-color: #5f4d93;
+		color: rgb(103, 109, 121);
+		background-color: white;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 300;
 	}
+  a {
+    color: rgb(103, 109, 121);
+  }
 `;
 
 const Wrapper = styled.div`
@@ -23,7 +26,8 @@ const Wrapper = styled.div`
   width: 64rem;
   margin: 0 auto;
   border-radius: 8px;
-  background-color: gray;
+  background-color: inherit;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,.2);
   @media (max-width: 768px) {
     max-width: calc(100% - 2rem);
   }

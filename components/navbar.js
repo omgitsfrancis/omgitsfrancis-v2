@@ -31,12 +31,12 @@ const Routes = [
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  background-color: #424242;
+  background-color: rgb(214, 214, 214);
   box-sizing: inherit;
   max-width: inherit;
   width: inherit;
   opacity: ${props => props.fixed && "0.9"};
-  padding: ${props => (props.fixed ? "0.25rem 0" : "0.5rem 0")};
+  padding: ${props => (props.fixed ? "0.125rem 0" : "0.25rem 0")};
   position: ${props => (props.fixed ? "fixed" : "absolute")};
   top: ${props => props.fixed && 0};
   border-radius: ${props => (props.fixed ? "0px" : "8px 8px 0 0")};
@@ -47,6 +47,9 @@ const Container = styled.div`
 const LinksContainer = styled.div`
   display: flex;
   background-color: inherit;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   @media (max-width: 768px) {
     position: absolute;
     top: 3rem;
@@ -57,18 +60,19 @@ const LinksContainer = styled.div`
 `;
 
 const Anchor = styled.a`
-  display: block;
+  display: inline-block;
   cursor: pointer;
   padding: 0.5rem 1.5rem;
-  margin: 0.2rem;
-  color: white;
+  color: inherit;
   background-color: inherit;
   font-size: 18px;
+  line-height: 1;
   font-family: inherit;
   font-weight: inherit;
   border-radius: 4px;
+  transition: background-color 0.25s;
   &:hover {
-    background-color: #8e8e93;
+    background-color: #f6f7f9;
   }
   @media (max-width: 768px) {
     display: ${props => (props.visible ? "block" : "none")};
@@ -80,7 +84,7 @@ const Bars = styled(FontAwesomeIcon)`
   display: none;
   position: absolute;
   right: 1rem;
-  bottom: 1.1rem;
+  bottom: 0.75rem;
   cursor: pointer;
   @media (max-width: 768px) {
     display: block;
@@ -113,7 +117,7 @@ const WindowButtonContainer = styled.div`
   flex-direction: row;
   position: absolute;
   left: 1.5rem;
-  bottom: 1rem;
+  bottom: 0.75rem;
   & > div:not(:last-child) {
     margin-right: 0.75rem;
   }
@@ -137,7 +141,7 @@ function WindowButtons() {
         </Circle>
       </Link>
       <Link href="/">
-        <Circle color="rgb(255,149,0)">
+        <Circle color="#ffbc00">
           <FontAwesomeIcon icon={faMinus} color="rgba(0,0,0,0.3)" />
         </Circle>
       </Link>
