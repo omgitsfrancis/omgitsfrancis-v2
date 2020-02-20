@@ -4,6 +4,7 @@ import Window from "../components/window";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Project from "../components/project";
+import { useState, useEffect } from "react";
 
 const Body = styled.div`
   padding-top: 5rem;
@@ -17,7 +18,37 @@ const Section = styled.div`
   }
 `;
 
+const SectionTitle = styled.h1`
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 2rem;
+`;
+
+const Projects = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > div {
+    margin-bottom: 1rem;
+  }
+`;
+
 export default function Index() {
+  const [repos, setRepos] = useState({});
+
+  useEffect(() => {
+    getRepos().then(data => {
+      setRepos(data.slice(0, 7));
+    });
+  }, []);
+
+  async function getRepos() {
+    const response = await fetch(
+      "https://api.github.com/users/omgitsfrancis/repos?sort=created&direction=desc"
+    );
+    return await response.json();
+  }
+
   return (
     <>
       <Header />
@@ -25,7 +56,7 @@ export default function Index() {
         <Navbar />
         <Body>
           <Section id="about">
-            <h1>Section 1</h1>
+            <SectionTitle>Section 1</SectionTitle>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -40,7 +71,7 @@ export default function Index() {
             </p>
           </Section>
           <Section id="experience">
-            <h1>Section 2</h1>
+            <SectionTitle>Section 2</SectionTitle>
             <p>Home</p>
             <p>Home</p>
             <p>Home</p>
@@ -68,32 +99,22 @@ export default function Index() {
           </Section>
 
           <Section id="code">
-            <h1>Section 3</h1>
-            <Project
-              title="Personal Website v1"
-              description="My very first take at making a website."
-              projectLink="https://omgitsfrancis.github.io/"
-              gitLink="https://github.com/omgitsfrancis/omgitsfrancis.github.io"
-            />
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p> <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
+            <SectionTitle>Code</SectionTitle>
+            <Projects>
+              {repos.length > 0 &&
+                repos.map(
+                  (repo, index) =>
+                    !repo.fork && (
+                      <Project
+                        title={repo.name}
+                        description={repo.description}
+                        projectLink={repo.homepage}
+                        gitLink={repo.html_url}
+                        key={index}
+                      />
+                    )
+                )}
+            </Projects>
           </Section>
         </Body>
       </Window>
