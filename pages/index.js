@@ -7,7 +7,7 @@ import Project from "../components/project";
 import { useState, useEffect } from "react";
 
 const Body = styled.div`
-  padding-top: 5rem;
+  padding-top: 1.5rem;
 `;
 
 const Section = styled.div`
@@ -20,8 +20,42 @@ const Section = styled.div`
 
 const SectionTitle = styled.h1`
   text-align: center;
+  font-size: 42px;
   font-weight: 300;
   margin-bottom: 2rem;
+  padding-bottom: 0.25rem;
+  border-bottom: solid 2px;
+`;
+
+const P = styled.p`
+  font-size: 18px;
+  margin: 0 3rem;
+  margin-bottom: 1rem;
+  @media (max-width: 768px) {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+`;
+
+const Selfie = styled.div`
+  position: relative;
+  margin: auto;
+  margin-bottom: 2rem;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 50%;
+  z-index: -1;
+  border: solid 8px white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  img {
+    width: 100%;
+    height: auto;
+  }
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 `;
 
 const Projects = styled.div`
@@ -56,22 +90,23 @@ export default function Index() {
         <Navbar />
         <Body>
           <Section id="about">
-            <SectionTitle>Section 1</SectionTitle>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the leap into
-              electronic typesetting, remaining essentially unchanged. It was
-              popularised in the 1960s with the release of Letraset sheets
-              containing Lorem Ipsum passages, and more recently with desktop
-              publishing software like Aldus PageMaker including versions of
-              Lorem Ipsum.
-            </p>
+            <SectionTitle>About</SectionTitle>
+            <Selfie>
+              <img src="./images/me.jpg" />
+            </Selfie>
+            <P>
+              Born and raised in San Diego. Growing up, I’ve had a huge interest
+              in technology. From watching The Screen Savers
+              everyday after school to religiously reading the weekly Fry’s ad,
+              I consider myself to be a geek.
+            </P>
+            <P>
+              Today, I’m currently a Software Engineer who’s currently diving
+              deep into React.
+            </P>
           </Section>
           <Section id="experience">
-            <SectionTitle>Section 2</SectionTitle>
+            <SectionTitle>Experience</SectionTitle>
             <p>Home</p>
             <p>Home</p>
             <p>Home</p>
