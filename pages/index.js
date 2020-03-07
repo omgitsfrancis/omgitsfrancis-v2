@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Project from "../components/project";
 import { useState, useEffect } from "react";
+import { Timeline } from "../components/timeline";
 
 const Body = styled.div`
   padding-top: 1.5rem;
@@ -107,30 +108,7 @@ export default function Index() {
           </Section>
           <Section id="experience">
             <SectionTitle>Experience</SectionTitle>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p> <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p>
-            <p>Home</p> <p>Home</p>
+            <Timeline />
           </Section>
 
           <Section id="code">

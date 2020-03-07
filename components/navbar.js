@@ -42,6 +42,7 @@ const Container = styled.div`
   border-radius: ${props => (props.fixed ? "0px" : "8px 8px 0 0")};
   transition: border-top-left-radius 0.25s ease,
     border-top-right-radius 0.25s ease, padding 0.25s ease;
+  z-index: 10;
 `;
 
 const LinksContainer = styled.div`
