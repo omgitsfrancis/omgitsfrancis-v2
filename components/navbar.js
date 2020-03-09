@@ -21,10 +21,6 @@ const Routes = [
   {
     text: "Code",
     href: "#code"
-  },
-  {
-    text: "Contact",
-    href: "#contact"
   }
 ];
 
