@@ -9,6 +9,7 @@ import { Timeline } from "../components/timeline";
 
 const Body = styled.div`
   padding-top: 1.5rem;
+  padding-bottom: 5rem;
 `;
 
 const Section = styled.div`
