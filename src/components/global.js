@@ -1,6 +1,8 @@
 
 import { createGlobalStyle } from "styled-components";
 
+export const TEXT_COLOR = "rgb(103, 109, 121)"
+
 export const GlobalStyles = createGlobalStyle`
   * {
     margin: 0;
@@ -11,12 +13,13 @@ export const GlobalStyles = createGlobalStyle`
 	}
   body {
 		box-sizing: border-box;
-		color: rgb(103, 109, 121);
+		color: ${TEXT_COLOR};
 		background-color: white;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-weight: 300;
 	}
   a {
-    color: rgb(103, 109, 121);
+    color: ${TEXT_COLOR};
   }
 `;
+

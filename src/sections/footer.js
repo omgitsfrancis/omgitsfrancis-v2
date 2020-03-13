@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelopeSquare} from "@fortawesome/free-solid-svg-icons";
+import { TEXT_COLOR } from "../components/global";
 
 const Container = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const SocialMediaContainer = styled.div`
 `;
 
 const SocialMediaIcon = styled(FontAwesomeIcon)`
-  color: rgb(103, 109, 121);
+  color: ${TEXT_COLOR};
 
   &:hover {
     opacity: 0.7;
