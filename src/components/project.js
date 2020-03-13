@@ -9,6 +9,10 @@ const ProjectContainer = styled.div`
   flex-direction: column;
   width: calc(33% - 1rem);
   margin-bottom: 1.5rem;
+  transition: transform linear 0.15s;
+  &:hover {
+    transform: scale(1.025);
+  }
 
   @media (max-width: 1024px) {
     width: calc(50% - 1rem);
