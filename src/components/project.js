@@ -46,7 +46,7 @@ const Icon = styled(FontAwesomeIcon)`
   }
 `
 
-export default function Project({
+export function Project({
   title,
   description,
   gitLink,

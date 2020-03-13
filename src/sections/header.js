@@ -6,7 +6,6 @@ import {
   faFile
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
