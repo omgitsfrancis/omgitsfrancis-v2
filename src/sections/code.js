@@ -22,16 +22,15 @@ const ProjectsContainer = styled.div`
 const MoreCodeButton = styled.button`
   border: 1px solid ${TEXT_COLOR};
   color: ${TEXT_COLOR};
+  background-color: white;
   border-radius: 4px;
   margin-top: 1.5rem;
   font-size: 16px;
   font-weight: 500;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: transform linear 0.15s;
   outline: none;
   &:hover {
-    transform: scale(1.025);
     text-decoration: underline;
   }
 `;
@@ -77,6 +76,7 @@ export default function Code() {
               description={repo.description}
               projectLink={repo.homepage}
               gitLink={repo.html_url}
+              language={repo.language}
               key={index}
             />
           ))}

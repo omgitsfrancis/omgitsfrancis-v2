@@ -22,8 +22,10 @@ const SocialMediaContainer = styled.div`
 
 const SocialMediaIcon = styled(FontAwesomeIcon)`
   color: ${TEXT_COLOR};
-
+  transition: transform 0.1s;
+  
   &:hover {
+    transform: scale(1.5);
     opacity: 0.7;
   }
 `;

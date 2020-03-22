@@ -7,12 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  padding: 0.5rem;
   width: calc(33% - 1rem);
   margin-bottom: 1.5rem;
-  transition: transform linear 0.15s;
-  &:hover {
-    transform: scale(1.025);
-  }
 
   @media (max-width: 1024px) {
     width: calc(50% - 1rem);
@@ -26,26 +24,35 @@ const ProjectHeader = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Title = styled.span`
   font-size: 18px;
   text-overflow: ellipsis;
-  font-weight: 500;
+  font-weight: 600;
 `;
+
+const Language = styled.span`
+  font-size: 10px;
+  padding: 0.125rem 0.25rem;
+  align-self: flex-start;
+  border: solid 1px;
+  border-radius: 3rem;
+  cursor: default;
+`
 
 const Description = styled.p`
   font-size: 14px;
-`;
-
-const ProjectBody = styled.div`
-  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 `;
 
 const Icon = styled(FontAwesomeIcon)`
   cursor: pointer;
+  transition: transform 0.1s;
+
   &:hover {
+    transform: scale(1.5);
     opacity: 0.7;
   }
 `
@@ -56,6 +63,7 @@ export function Project({
   gitLink,
   projectLink,
   pic,
+  language,
   ...props
 }) {
   return (
@@ -79,9 +87,8 @@ export function Project({
           </a>
         </div>
       </ProjectHeader>
-      <ProjectBody>
-        <Description>{description}</Description>
-      </ProjectBody>
+      <Description>{description}</Description>
+      {language && <Language>{language}</Language>}
     </ProjectContainer>
   );
 }
