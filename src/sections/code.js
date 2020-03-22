@@ -7,7 +7,6 @@ import { TEXT_COLOR } from "../components/global";
 const CodeSection = styled(Section)`
   display: flex;
   flex-direction: column;
-  align-items: center;
 `;
 
 const ProjectsContainer = styled.div`
@@ -28,6 +27,7 @@ const MoreCodeButton = styled.button`
   font-size: 16px;
   font-weight: 500;
   padding: 0.5rem 1rem;
+  align-self: center;
   cursor: pointer;
   outline: none;
   &:hover {
