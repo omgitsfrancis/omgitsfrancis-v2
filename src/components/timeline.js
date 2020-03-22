@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import { TEXT_COLOR } from "../components/global";
+ 
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -18,8 +19,8 @@ const Container = styled.div`
 const Line = styled.div`
   display: flex;
   justify-content: center;
-  background-color: black;
-  width: 8px;
+  background-color: ${TEXT_COLOR};
+  width: 4px;
   min-height: 160px;
 `;
 
@@ -27,18 +28,16 @@ const Dot = styled.div`
   position: absolute;
   width: 24px;
   height: 24px;
-  background-color: black;
+  background-color: ${TEXT_COLOR};
   border-radius: 50%;
-  transform: translateY(-4px);
-  transition: transform linear 0.15s;
   &:hover {
-    transform: scale(1.025);
+    background-color: #3498ff;
   }
 `;
 
 const LastDot = styled(Dot)`
   align-self: flex-end;
-  transform: translateY(4px);
+  transform: translateY(24px);
 `;
 
 const ItemContainer = styled.div`
@@ -52,9 +51,11 @@ const ItemContainer = styled.div`
     text-align: left;
   }
 `;
+
 const ItemHeader = styled.h2`
   margin-bottom: 0.25rem;
 `;
+
 const ItemDate = styled.h4`
   font-weight: bold;
   margin-bottom: 0.25rem;
