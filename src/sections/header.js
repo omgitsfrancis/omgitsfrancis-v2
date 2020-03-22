@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown,
   faEnvelopeSquare,
-  faFile
+  faPenSquare
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -89,24 +89,31 @@ export default function Header(props) {
     <Container>
       <div style={{ position: "relative" }}>
         <SocialMediaContainer>
-          <a href="https://github.com/omgitsfrancis/">
+          <a href="https://github.com/omgitsfrancis/" title="Github">
             <SocialMediaIcon
               icon={faGithubSquare}
               style={{ animation: "bounce 0.2s linear 1s" }}
               size="sm"
             />
           </a>
-          <a href="https://www.linkedin.com/in/francis-enriquez/">
+          <a href="https://www.linkedin.com/in/francis-enriquez/" title="LinkedIn">
             <SocialMediaIcon
               icon={faLinkedin}
               style={{ animation: "bounce 0.2s linear 1.1s" }}
               size="sm"
             />
           </a>
-          <a href="mailto:francisdenriquez@gmail.com">
+          <a href="mailto:francisdenriquez@gmail.com" title="Email">
             <SocialMediaIcon
               icon={faEnvelopeSquare}
               style={{ animation: "bounce 0.2s linear 1.2s" }}
+              size="sm"
+            />
+          </a>
+          <a href="https://francis-enriquez-resume.netlify.com/" title="Resume">
+            <SocialMediaIcon
+              icon={faPenSquare}
+              style={{ animation: "bounce 0.2s linear 1.3s" }}
               size="sm"
             />
           </a>
