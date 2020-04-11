@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowDown,
   faEnvelopeSquare,
-  faPenSquare
+  faPenSquare,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import Head from "next/head";
 
 const Container = styled.div`
   display: flex;
@@ -86,56 +87,77 @@ const ViewMoreIcon = styled(FontAwesomeIcon)`
 
 export default function Header(props) {
   return (
-    <Container>
-      <div style={{ position: "relative" }}>
-        <SocialMediaContainer>
-          <a href="https://github.com/omgitsfrancis/" title="Github">
-            <SocialMediaIcon
-              icon={faGithubSquare}
-              style={{ animation: "bounce 0.2s linear 1s" }}
-              size="sm"
-            />
-          </a>
-          <a href="https://www.linkedin.com/in/francis-enriquez/" title="LinkedIn">
-            <SocialMediaIcon
-              icon={faLinkedin}
-              style={{ animation: "bounce 0.2s linear 1.1s" }}
-              size="sm"
-            />
-          </a>
-          <a href="mailto:francisdenriquez@gmail.com" title="Email">
-            <SocialMediaIcon
-              icon={faEnvelopeSquare}
-              style={{ animation: "bounce 0.2s linear 1.2s" }}
-              size="sm"
-            />
-          </a>
-          <a href="https://francis-enriquez-resume.netlify.com/" title="Resume">
-            <SocialMediaIcon
-              icon={faPenSquare}
-              style={{ animation: "bounce 0.2s linear 1.3s" }}
-              size="sm"
-            />
-          </a>
-        </SocialMediaContainer>
-        <p>
-          <HoverText>Hello, </HoverText>
-          <HoverText>I'm</HoverText>
-        </p>
-        <Title>
-          {"Francis Enriquez".split("").map((letter, index) => {
-            return <HoverText key={index}>{letter}</HoverText>;
+    <>
+      <Head>
+        <title>Francis Enriquez</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Container>
+        <div style={{ position: "relative" }}>
+          <SocialMediaContainer>
+            <a href="https://github.com/omgitsfrancis/" title="Github">
+              <SocialMediaIcon
+                icon={faGithubSquare}
+                style={{ animation: "bounce 0.2s linear 1s" }}
+                size="sm"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/francis-enriquez/"
+              title="LinkedIn"
+            >
+              <SocialMediaIcon
+                icon={faLinkedin}
+                style={{ animation: "bounce 0.2s linear 1.1s" }}
+                size="sm"
+              />
+            </a>
+            <a href="mailto:francisdenriquez@gmail.com" title="Email">
+              <SocialMediaIcon
+                icon={faEnvelopeSquare}
+                style={{ animation: "bounce 0.2s linear 1.2s" }}
+                size="sm"
+              />
+            </a>
+            <a
+              href="https://francis-enriquez-resume.netlify.com/"
+              title="Resume"
+            >
+              <SocialMediaIcon
+                icon={faPenSquare}
+                style={{ animation: "bounce 0.2s linear 1.3s" }}
+                size="sm"
+              />
+            </a>
+          </SocialMediaContainer>
+          <p>
+            <HoverText>Hello, </HoverText>
+            <HoverText>I'm</HoverText>
+          </p>
+          <Title>
+            {"Francis Enriquez".split("").map((letter, index) => {
+              return <HoverText key={index}>{letter}</HoverText>;
+            })}
+          </Title>
+        </div>
+        <p style={{ marginBottom: "3rem" }}>
+          {[
+            "I ",
+            "like ",
+            "to ",
+            "build ",
+            "things ",
+            "for ",
+            "the ",
+            "web.",
+          ].map((word, index) => {
+            return <HoverText key={index}>{word}</HoverText>;
           })}
-        </Title>
-      </div>
-      <p style={{ marginBottom: "3rem" }}>
-        {['tester, ', 'developer, ', 'and, ', 'all ','of ', 'the ', 'above'].map((word, index) => {
-          return <HoverText key={index}>{word}</HoverText>
-        })}
-      </p>
-      <a href="#about">
-        <ViewMoreIcon icon={faArrowDown} size="4x" />
-      </a>
-    </Container>
+        </p>
+        <a href="#about">
+          <ViewMoreIcon icon={faArrowDown} size="4x" />
+        </a>
+      </Container>
+    </>
   );
 }
