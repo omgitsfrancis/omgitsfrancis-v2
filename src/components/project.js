@@ -27,10 +27,14 @@ const ProjectHeader = styled.div`
   margin-bottom: 0.5rem;
 `;
 
-const Title = styled.span`
+const Title = styled.a`
   font-size: 18px;
   text-overflow: ellipsis;
   font-weight: 600;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const Language = styled.span`
@@ -69,12 +73,12 @@ export function Project({
   return (
     <ProjectContainer>
       <ProjectHeader>
-        <Title>
+        <Title href={gitLink} target="_blank">
           {title}
         </Title>
         <div>
           {projectLink && (
-            <a href={projectLink}>
+            <a href={projectLink} target="_blank">
               <Icon
                 style={{ marginRight: "0.5rem" }}
                 icon={faExternalLinkAlt}
@@ -82,7 +86,7 @@ export function Project({
               />
             </a>
           )}
-          <a href={gitLink}>
+          <a href={gitLink} target="_blank">
             <Icon icon={faGithub} size="lg" />
           </a>
         </div>

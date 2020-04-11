@@ -39,7 +39,7 @@ export default function Code() {
   const [repos, setRepos] = useState({});
   const [showNum, setShowNum] = useState(6);
   const [repoCount, setRepoCount] = useState(0);
-  const INCREMENT = 3;
+  const INCREMENT = 6;
 
   useEffect(() => {
     getRepos().then(data => {
