@@ -102,7 +102,7 @@ export function Timeline() {
         <LastDot>
           <TimelineItem
             header="InnovaSystems International"
-            date="2017 - 2018"
+            date="2018 - Present"
             right
           >
             Started off in QA creating automated UI tests.
