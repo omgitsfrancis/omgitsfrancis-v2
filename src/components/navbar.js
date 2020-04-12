@@ -29,13 +29,11 @@ const Container = styled.div`
   justify-content: center;
   background-color: rgb(214, 214, 214);
   box-sizing: inherit;
-  max-width: inherit;
+  max-width: 100%;
   width: inherit;
-  opacity: ${props => props.fixed && "0.9"};
-  padding: ${props => (props.fixed ? "0.125rem 0" : "0.25rem 0")};
-  position: ${props => (props.fixed ? "fixed" : "absolute")};
-  top: ${props => props.fixed && 0};
-  border-radius: ${props => (props.fixed ? "0px" : "8px 8px 0 0")};
+  position: sticky;
+  top: -3px;
+  border-radius: 8px 8px 0 0;
   transition: border-top-left-radius 0.25s ease,
     border-top-right-radius 0.25s ease, padding 0.25s ease;
   z-index: 10;
@@ -153,32 +151,8 @@ function WindowButtons() {
 
 export default function Navbar(props) {
   const { links, ...rest } = props;
-
-  const [fixed, setFixed] = useState(false);
-  const [height, setHeight] = useState(0);
+  
   const [showLinks, toggleShowLinks] = useState(false); // For the responsive tool bar
-
-  useEffect(() => {
-    const header = document.getElementById("navbar");
-    const sticky = header.offsetTop;
-
-    const resizeCallBack = window.addEventListener("resize", () => {
-      setHeight(window.innerHeight);
-    });
-
-    const scrollCallBack = window.addEventListener("scroll", () => {
-      if (window.pageYOffset > sticky) {
-        setFixed(true);
-      } else {
-        setFixed(false);
-      }
-    });
-
-    return () => {
-      window.removeEventListener("scroll", scrollCallBack);
-      window.removeEventListener("resize", resizeCallBack);
-    };
-  }, [height]);
 
   const handleBarsClick = () => {
     toggleShowLinks(!showLinks);
@@ -189,10 +163,10 @@ export default function Navbar(props) {
   };
 
   return (
-    <Container id="navbar" fixed={fixed}>
+    <Container id="navbar" >
       <WindowButtons />
       {/* TODO: fix hacky div */}
-      <div style={{ padding: "1.25rem" }}></div>
+      <div style={{ padding: "1.5rem" }}></div>
       <LinksContainer onClick={handleNavClick} visible={showLinks}>
         {Routes.map((route, index) => {
           return (
