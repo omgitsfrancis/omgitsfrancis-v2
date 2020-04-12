@@ -6,10 +6,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 6rem;
+  margin-bottom:10rem;
   @media (max-width: 768px) {
     align-items: flex-start;
-    padding: 0px 15%;
   }
   @media (max-width: 480px) {
     padding: 0px;

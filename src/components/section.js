@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Section = styled.div`
-  padding-top: 5rem;
+  padding-top: 3rem;
   margin: 0 5rem;
   @media (max-width: 480px) {
     margin: 0 2rem;
