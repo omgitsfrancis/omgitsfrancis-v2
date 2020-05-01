@@ -51,6 +51,12 @@ const Description = styled.p`
   margin-bottom: 0.5rem;
 `;
 
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+`
+
 const Icon = styled(FontAwesomeIcon)`
   cursor: pointer;
   transition: transform 0.1s;
@@ -76,7 +82,7 @@ export function Project({
         <Title href={gitLink} target="_blank">
           {title}
         </Title>
-        <div>
+        <IconWrapper>
           {projectLink && (
             <a href={projectLink} target="_blank">
               <Icon
@@ -89,7 +95,7 @@ export function Project({
           <a href={gitLink} target="_blank">
             <Icon icon={faGithub} size="lg" />
           </a>
-        </div>
+        </IconWrapper>
       </ProjectHeader>
       <Description>{description}</Description>
       {language && <Language>{language}</Language>}
