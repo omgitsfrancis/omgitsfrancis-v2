@@ -3,4 +3,4 @@ Created a new personal site using React. My first website was written in vanilla
 
 Old site: https://omgitsfrancis.github.io/
 
-Current Site: https://omgitsfrancis.netlify.com/
+Current Site: https://omgitsfrancis.netlify.app/
